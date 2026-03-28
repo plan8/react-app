@@ -1,22 +1,25 @@
-import { useState } from 'react'
-
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = React.useState(0);
 
   return (
-    <div className="app">
+    <div style={{
+      display: 'flex', flexDirection: 'column', alignItems: 'center',
+      justifyContent: 'center', minHeight: '100vh', fontFamily: 'system-ui, sans-serif'
+    }}>
       <h1>🚀 React App</h1>
-      <p>Deployed to GitHub Pages from plan8</p>
-      <div className="card">
-        <button onClick={() => setCount(count + 1)}>
+      <p style={{ color: '#666' }}>Deployed to GitHub Pages from <strong>plan8</strong></p>
+      <div style={{ margin: '2rem 0' }}>
+        <button 
+          onClick={() => setCount(count + 1)}
+          style={{
+            padding: '0.8em 1.6em', fontSize: '1.1em', borderRadius: '8px',
+            border: '1px solid #ddd', cursor: 'pointer', background: '#f9f9f9'
+          }}
+        >
           Count is {count}
         </button>
       </div>
-      <p className="read-the-docs">
-        Built with Vite + React
-      </p>
+      <p style={{ color: '#999', fontSize: '0.9em' }}>Built with React 18 + Babel</p>
     </div>
-  )
+  );
 }
-
-export default App
